@@ -12,6 +12,7 @@ import React from "react";
 
 
 
+
 function App() {
   const [activeTab, setActiveTab] = useState(0);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -41,7 +42,10 @@ function App() {
           }
         </div>
         <div className='containerTabs'>
-          <Tabs setActiveTab={setActiveTab} />
+          <Tabs 
+          setActiveTab={setActiveTab}
+          activeTab={activeTab}
+          />
           {activeTab === 0 && <TabInfoOne />}
           {activeTab === 1 && <TabInfoTwo />}
           {activeTab === 2 && <TabInfoThree />}

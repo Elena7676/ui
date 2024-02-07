@@ -13,7 +13,8 @@ const TabsItem =( {tab, index, activeTab, setActiveTab} )=> {
             <button 
             className={index === activeTab ? 'tabBntActive' : 'tabBtnDefault'}
             value={index}
-            onClick={changeActive}> 
+            onClick={changeActive}
+            > 
             { tab }
             </button>
         </div>
