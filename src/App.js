@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
-import { Accordion } from './Accordion/Accordion';
 import './App.css';
-import { Tabs } from './Tabs/Tabs';
-import TabInfoOne from './Tabs/TabInfoOne';
-import TabInfoTwo from './Tabs/TabInfoTwo';
-import TabInfoThree from './Tabs/TabInfoThree';
-import Modal from './Modal/Modal';
-import Content from './Modal/Content';
 import LoaderPage from './Loader/LoaderPage';
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink
+} from "react-router-dom";
+import About from './About/About';
+import Service from './Services/Service';
+import Team from './Team/Team';
+import Contact from './Contact/Contact';
+import Home from './Home/Home';
+import Footer from './Footer';
+
+
+
 
 
 
 
 function App() {
-  const [activeTab, setActiveTab] = useState(0);
-  const [isOpenModal, setIsOpenModal] = useState(false);
   const [stateLoader, setStateLoader] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => setStateLoader(false), 1000);
@@ -27,35 +33,25 @@ function App() {
         {stateLoader && <LoaderPage />}
       </div>
       <div className='container'>
-        <div className='containerModal'>
-          <div className='btnOpenWrap'>
-            <button onClick={() => setIsOpenModal(true)} className='btnOpen'>
-              <span className='open'></span>
-              <span className='open'></span>
-              <span className='open'></span>
-            </button>
-          </div>
-          {isOpenModal &&
-            <Modal setIsOpenModal={setIsOpenModal}>
-              <Content setIsOpenModal={setIsOpenModal} />
-            </Modal>
-          }
-        </div>
-        <div className='containerTabs'>
-          <Tabs 
-          setActiveTab={setActiveTab}
-          activeTab={activeTab}
-          />
-          {activeTab === 0 && <TabInfoOne />}
-          {activeTab === 1 && <TabInfoTwo />}
-          {activeTab === 2 && <TabInfoThree />}
-        </div>
-        <div className='containerAccordion'>
-          <Accordion />
-        </div>
+        <Router>
+          <nav className="nav-wrapper">
+            <NavLink to='/' className="btn">главная</NavLink>
+            <NavLink to='/about'className="btn">о компании</NavLink>
+            <NavLink to='/service' className="btn">наши услуги</NavLink>
+            <NavLink to='/team' className="btn">команда</NavLink>
+            <NavLink to='/contact' className="btn">Контакты</NavLink>
+          </nav>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/service' element={<Service />} />
+            <Route path='team' element={<Team />} />
+            <Route path='contact' element={<Contact />} />
+          </Routes>
+        </Router>
+        <Footer/>
       </div>
     </div>
-
   );
 }
 

@@ -1,9 +1,19 @@
-function Services() {
+
+import ServItem from './ServItem';
+
+const Services = ( {setActiveItem, activeItem} ) => {
     return (
-        <div>
-            <h1>
-                take a look at our services
-            </h1>
+        <div className='btnWrap'>
+            {
+                [`лепим`, `глазируем`,`моделируем`].map((serv, index) => (
+                    <ServItem
+                    key = {index}
+                    serv = {serv}
+                    index = {index}
+                    setActiveItem = {setActiveItem}
+                    activeItem={activeItem}/>
+                ))
+            }
         </div>
     )
 }

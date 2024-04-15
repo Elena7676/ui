@@ -1,42 +1,42 @@
-.containerTabs {
+.containerServ {
     padding-top: 70px;
 }
-.bnbWrap {
+.btnWrap {
     display: flex;
     justify-content: space-around;
     margin-bottom: 40px;
-    border-bottom: 1px solid rgba(235, 84, 38, 0.5);
+    border-bottom: 1px solid rgba(241, 55, 151, 0.5);
 }
-.tabItem{
+.servItem{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.tabContent {
+.servContent {
     font-size: 25px;
     display: flex;
     align-items: center;
     padding-left: 30px;
     width: 420px;
     height: 400px;
-    border: 1px solid rgba(235, 84, 38, 0.7);
+    border: 1px solid rgba(241, 55, 151, 0.5);
     border-radius: 50%;
 }
-.tabImg {
+.servImg {
     width: 400px;
 }
-.tabBtnDefault {
+.servBtnDefault {
     font-size: 20px;
     background-color: transparent;
     border-color: transparent;
     padding: 20px;
     cursor: pointer;
 }
-.tabBntActive {
-    font-size: 30px;
-    color: rgb(246, 16, 16);
+.servBntActive {
+    font-size: 20px;
+    color: #f13797;
     background-color: transparent;
-    border: 1px solid rgba(235, 84, 38, 0.5);
+    border-color: transparent;
     padding: 20px;
     cursor: pointer;
 }

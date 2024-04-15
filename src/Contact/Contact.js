@@ -1,10 +1,9 @@
+import { Accordion } from "../Accordion/Accordion";
 function Contact() {
     return (
-        <div>
-            <h1>
-                Our contacts
-            </h1>
-        </div>
+        <div className='container'>
+        <Accordion />
+      </div>
     )
 }
 export default Contact;

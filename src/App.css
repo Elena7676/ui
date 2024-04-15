@@ -13,3 +13,33 @@ body {
     margin: 0 auto;
     max-width: 1280px;
 }
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-bottom:1px solid #f13797;
+}
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #2A2325;
+}
+
+.active {
+    color: #f13797;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.active::after{
+    display: block;
+    height: 10px;
+    border-right: 1px solid #FBA679;
+    transform: skew(320deg);
+}
+
+.transitioning {
+    display: block;
+    height: 10px;
+    border-right: 1px solid #FBA679;
+    transform: skew(320deg);
+}
